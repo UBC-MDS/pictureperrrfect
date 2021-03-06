@@ -4,6 +4,10 @@ This outlines how to propose a change to pictureperrrfect.
 For more detailed info about contributing to this, and other tidyverse packages, please see the
 [**development contributing guide**](https://rstd.io/tidy-contrib). 
 
+## Workflow
+
+For this project we will be using the GitHub Flow strategy for collaboration.
+
 ## Fixing typos
 
 You can fix typos, spelling mistakes, or grammatical errors in the documentation directly using the GitHub web interface, as long as the changes are made in the _source_ file. 
@@ -43,5 +47,5 @@ If you’ve found a bug, please file an issue that illustrates the bug with a mi
 ## Code of Conduct
 
 Please note that the pictureperrrfect project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
+[Contributor Code of Conduct](../CODE_OF_CONDUCT.md). By contributing to this
 project you agree to abide by its terms.

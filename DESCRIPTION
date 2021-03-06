@@ -1,20 +1,12 @@
 Package: pictureperrrfect
-Title: What the Package Does (One Line, Title Case)
+Title: pictureperrrfect
 Version: 0.0.0.9000
-Authors@R: 
-    c(person(given = "Chad",
-             family = "Neald",
-             role = c("aut", "cre")),
-      person(given = "Dustin",
-             family = "Burnham",
-             role = "aut"),
-      person(given = "Debananda",
-             family = "Sarkar",
-             role = "aut"),
-      person(given = "Kangbo",
-             family = "Lu",
-             role = "aut"))
-Description: A fun Python utility package to make your pictures perfect! The package enables users to process, manipulate, and gather data about their images.
+Authors@R: c(
+    person("Chad", "Neald", email = "chad_neald@hotmail.com", role = "cre"),
+    person("Dustin", "Burnham", role = "aut"),
+    person("Debananda", "Sarkar", role = "aut"),
+    person("Kangbo", "Lu", role = "aut"))
+Description: A fun R utility package to make your pictures perfect! The package enables users to process, manipulate, and gather data about their images.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

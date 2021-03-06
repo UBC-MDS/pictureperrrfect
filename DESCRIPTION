@@ -14,7 +14,7 @@ Authors@R:
       person(given = "Kangbo",
              family = "Lu",
              role = "aut"))
-Description: What the package does (one paragraph).
+Description: A fun Python utility package to make your pictures perfect! The package enables users to process, manipulate, and gather data about their images.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

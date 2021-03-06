@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of pictureperrrfect is to …
+A fun R utility package to make your pictures perfect! The package enables users to process, manipulate, and gather data about their images.
 
 ## Installation
 
@@ -17,38 +17,47 @@ You can install the released version of pictureperrrfect from
 install.packages("pictureperrrfect")
 ```
 
-## Example
+## Features
 
-This is a basic example which shows you how to solve a common problem:
+The package picturepyfect is an image untility package intended to manipulate images through a variety of functions. The intention is that a user with little to no experience can quickly call a function to alter, compress, or print out statistics for an image. Internally, the functions make use of numpy arrays for quick and efficient processes.
 
-``` r
-library(pictureperrrfect)
-## basic example code
-```
+There are four main functions planned for development and they are outlined below. Each function can be called on colour images or greyscale images. Additional functions may be added if time permits.
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+- Function 1 filter_pyfect: With this function, a user can either select a predefined filter or create their own custom filter. The image is then passed through the filter and output for the user to view.
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+- Function 2 get_property: The goal of this function is to take an image and return statistics related to the different colour bands within the image. These statistics include mean and median values for each channel as well as a plotted histogram of values for each channel.
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+- Function 3 compression_pyfect: Using a pooling algorithm, this function will apply lossy compression to given image. The user will be able to specify the type of pooling (max, min, or mean) as well as the kernel size.
 
-You can also embed plots, for example:
+- Function 4 rotate_pyfect: This final function applies a rotation to a given image and outputs the result. A user can specifiy the number of degrees they wish the image to be rotated.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+Image processing is very popular in the Python ecosystem so we are aware that we are not reinventing the wheel with our package, but we hope to gain a deeper understanding of the inner workings of an image package. Specifically, both NumPy and OpenCV have functions that rotate or flip an image (cv2.rotate(), cv2.flip(), np.rot90(), etc). PyTorch has many functions related to convolutional neural networks that both apply pooling layers and filter layers to images which is what we are partially aiming to create with functions 1 and 3. Lastly, the ImageStat module from the Python Imaging Library (PIL) accomplishes many of the tasks outlined in function 2.
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+## Dependencies
+
+- TODO
+
+## Usage
+
+- TODO
+
+## Documentation
+
+The official documentation is hosted on Read the Docs: https://picturepyfect.readthedocs.io/en/latest/
+
+## Contributors
+
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/debanandasarkar/picturepyfect/graphs/contributors).
+
+* Chad Neald: @ChadNeald
+* Debananda Sarkar: @debanandasarkar
+* Dustin Burnham: @dusty736
+* Kangbo Lu: @KangboLu
+
+### Workflow
+
+For this project we will be using the GitHub Flow strategy for collaboration. 
+
+### Credits
+
+This package was created following along to "R packages" Chapter 2: The Whole Game by Hadley Wickham and Jenny Bryan.

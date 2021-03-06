@@ -2,11 +2,18 @@ Package: pictureperrrfect
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Chad",
-           family = "Neald",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    c(person(given = "Chad",
+             family = "Neald",
+             role = c("aut", "cre")),
+      person(given = "Dustin",
+             family = "Burnham",
+             role = "aut"),
+      person(given = "Debananda",
+             family = "Sarkar",
+             role = "aut"),
+      person(given = "Kangbo",
+             family = "Lu",
+             role = "aut"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8

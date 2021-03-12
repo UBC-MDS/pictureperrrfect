@@ -74,5 +74,5 @@ rotation_perrrfect <- function(image, n_rot) {
   }
 
   # Export
-  as.cimg(image_df)
+  suppressWarnings(as.cimg(image_df))
 }

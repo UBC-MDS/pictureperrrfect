@@ -60,7 +60,7 @@ rotation_perrrfect <- function(image, n_rot) {
 
       # Initialize rotated_image
       if (i == 1) {
-        rotated_image = rotated_df
+        rotated_image <- rotated_df
       } else {
         rotated_image <- rbind(rotated_image, rotated_df)
       }

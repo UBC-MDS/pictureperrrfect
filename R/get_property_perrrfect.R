@@ -7,7 +7,25 @@ library(imager)
 #' @return  a list of image dimensions, pixels, and each channel's mean and median
 #'
 #' @examples
-#' get_property_perrrfect(image)
+#' get_property_perrrfect(image) # all black image
+#' $width
+#' [1] 150
+#'
+#' $height
+#' [1] 200
+#'
+#' $pixels
+#' [1] 30000
+#'
+#' $R
+#' [1] 0 0
+#'
+#' $G
+#' [1] 0 0
+#'
+#' $B
+#' [1] 0 0
+
 get_property_perrrfect <- function(image) {
     # error handling
     if (!imager::is.cimg(image)) {

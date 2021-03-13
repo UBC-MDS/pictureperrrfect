@@ -1,10 +1,10 @@
 #' rotation_perrrfect rotates an image in matrix form by
-#' either 90, 180, 270 degrees.
+#' either 90, 180, 270, or 360 degrees.
 #'
-#' @param image cimg of pixel values to be rotated
+#' @param image imager::cimg of pixel values to be rotated
 #' @param n_rot Integer number of 90-degree rotations to return
 #'
-#' @return Matrix of rotated pixel values
+#' @return imager::cimg of rotated pixel values
 #'
 #' @examples
 #' rotation_perrrfect(imager::boats, 1)

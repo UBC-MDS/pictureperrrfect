@@ -23,9 +23,10 @@ testthat::test_that("output type incorrect for sharpen tests", {
 imager::save.image(test_image, here::here("img", "temp_image.jpg"))
 temp_image <- load.image(here::here("img", "temp_image.jpg"))
 
-#testthat::test_that("regression test sharpen", {
-#  testthat::expect_identical(temp_image, output_beautiful_Vancouver_sharpen_21)
-#})
+testthat::test_that("regression test sharpen", {
+  testthat::expect_equal(temp_image, output_beautiful_Vancouver_sharpen_21,
+                         tolerance = 0.05)
+})
 ###########################################################################################################
 # Test blur image
 test_image <- filter_perrrfect(input_image, filter_type = "blur", filter_size = 21, custom_filter = NULL)
@@ -36,9 +37,10 @@ testthat::test_that("output type incorrect for blur tests", {
 imager::save.image(test_image, here::here("img", "temp_image.jpg"))
 temp_image <- load.image(here::here("img", "temp_image.jpg"))
 
-#testthat::test_that("regression test blur", {
-#  testthat::expect_identical(temp_image, output_beautiful_Vancouver_blur_21)
-#})
+testthat::test_that("regression test blur", {
+  testthat::expect_equal(temp_image, output_beautiful_Vancouver_blur_21,
+                         tolerance = 0.05)
+})
 ###########################################################################################################
 # Test custom filtered image
 test_image <- filter_perrrfect(input_image, filter_type = "custom", filter_size = 21, custom_filter = matrix(0.01, 21, 21))
@@ -49,9 +51,10 @@ testthat::test_that("output type incorrect for custom tests", {
 imager::save.image(test_image, here::here("img", "temp_image.jpg"))
 temp_image <- load.image(here::here("img", "temp_image.jpg"))
 
-#testthat::test_that("regression test custom", {
-#  testthat::expect_identical(temp_image, output_beautiful_Vancouver_blur_21)
-#})
+testthat::test_that("regression test custom", {
+  testthat::expect_equal(temp_image, output_beautiful_Vancouver_blur_21,
+                         tolerance = 0.05)
+})
 
 ###########################################################################################################
 # Test predefined filter definition
@@ -62,7 +65,9 @@ expected_sharpen_filter_7 <- as.cimg(matrix(
   nrow = 7, ncol = 7
 ))
 
-#testthat::test_that("regression test custom", {
-#  testthat::expect_identical(build_filter("blur", 5), expected_blur_filter_5)
-#  testthat::expect_identical(build_filter("sharpen", 7), expected_sharpen_filter_7)
-#})
+testthat::test_that("regression test custom", {
+  testthat::expect_equal(build_filter("blur", 5), expected_blur_filter_5,
+                         tolerance = 0.05)
+  testthat::expect_equal(build_filter("sharpen", 7), expected_sharpen_filter_7,
+                         tolerance = 0.05)
+})

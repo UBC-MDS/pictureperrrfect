@@ -10,7 +10,7 @@
 #' rotation_perrrfect(imager::boats, 1)
 rotation_perrrfect <- function(image, n_rot) {
   # Type testing
-  if(!is.cimg(image)){
+  if(!imager::is.cimg(image)){
     stop("Cannot rotate a non-cimg object")
   }
 
@@ -74,5 +74,5 @@ rotation_perrrfect <- function(image, n_rot) {
   }
 
   # Export
-  suppressWarnings(as.cimg(image_df))
+  suppressWarnings(imager::as.cimg(image_df))
 }

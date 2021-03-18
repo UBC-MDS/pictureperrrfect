@@ -64,8 +64,10 @@ build_filter <- function(kernel_type, kernel_size) {
 #' @return A cimg object representing the transformed image.
 #'
 #' @examples
+#' \dontrun{
 #' filter_perrrfect(imager::boats, filter_type="blur", filter_size=21L, custom_filter=NULL)
 #' filter_perrrfect(imager::boats, filter_type="custom", custom_filter=matrix(0.01, 42, 21))
+#'}
 filter_perrrfect <- function(image, filter_type = "blur", filter_size = 3, custom_filter = NULL) {
   if (magrittr::not(is.cimg(image))) {
     stop("Invalid image. Image in not a cimg object")

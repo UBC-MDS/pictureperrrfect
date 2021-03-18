@@ -1,9 +1,15 @@
 # load images
-white_image <- load.image(here::here("img", "white.png"))
-black_image <- load.image(here::here("img", "black.png"))
-red_image <- load.image(here::here("img", "red.png"))
-green_image <- load.image(here::here("img", "green.png"))
-blue_image <- load.image(here::here("img", "blue.png"))
+# white_image <- load.image(here::here("img", "white.png"))
+# black_image <- load.image(here::here("img", "black.png"))
+# red_image <- load.image(here::here("img", "red.png"))
+# green_image <- load.image(here::here("img", "green.png"))
+# blue_image <- load.image(here::here("img", "blue.png"))
+
+white_image <- load.image("../img/white.png")
+black_image <- load.image("../img/black.png")
+red_image <- load.image("../img/red.png")
+green_image <- load.image("../img/green.png")
+blue_image <- load.image("../img/blue.png")
 
 # obtain statistics
 white_image_stats <- get_property_perrrfect(white_image)

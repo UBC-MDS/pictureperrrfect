@@ -1,5 +1,5 @@
 Package: pictureperrrfect
-Title: pictureperrrfect
+Title: Pictureperrrfect
 Version: 0.0.0.9000
 Authors@R: c(
     person("Chad", "Neald", email = "chad_neald@hotmail.com", role = "cre"),
@@ -13,7 +13,9 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
+    magrittr,
     covr,
+    stats,
     imager,
     tidyverse,
     dplyr,

@@ -6,6 +6,11 @@
 #'
 #' @return imager::cimg of rotated pixel values
 #'
+#' @import imager
+#' @import tidyverse
+#'
+#' @export
+#'
 #' @examples
 #' rotation_perrrfect(imager::boats, 1)
 rotation_perrrfect <- function(image, n_rot) {
@@ -38,7 +43,7 @@ rotation_perrrfect <- function(image, n_rot) {
   while (rotate > 0) {
 
     # Loop through channels
-    for (i in 1:max(image_df$cc)) {
+    for (i in 1:max(image_df["cc"])) {
       # Get channel
       channel_df <- image_df %>%
         dplyr::filter(cc == i) %>%

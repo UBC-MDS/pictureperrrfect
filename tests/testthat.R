@@ -1,5 +1,7 @@
 library(magrittr)
 library(testthat)
 library(imager)
+library(abind)
+library(reticulate)
 library(pictureperrrfect)
 test_check("pictureperrrfect")

@@ -8,10 +8,13 @@
 #'
 #' @return A matrix of size kernel_size * kernel_size representing the filter.
 #'
+#' @import imager
+#'
+#' @export
+#'
 #' @examples
 #' build_filter("blur", 3)
 #' build_filter("sharpen", 7)
-#'
 build_filter <- function(kernel_type, kernel_size) {
 
   if (magrittr::not(is.numeric(kernel_size))) {
@@ -54,12 +57,13 @@ build_filter <- function(kernel_type, kernel_size) {
 #' @param custom_filter A 2d matrix that allows users to pass their own filter.
 #'     This is only used if the users select filter_type = "custom"
 #'
+#' @export
+#'
 #' @return A cimg object representing the transformed image.
 #'
 #' @examples
-#' filter_perrrfect(im, filter_type="blur", filter_size=21L, custom_filter=NULL)
-#' filter_perrrfect(im, filter_type="custom", custom_filter=matrix(0.01, 42, 21))
-#'
+#' filter_perrrfect(imager::boats, filter_type="blur", filter_size=21L, custom_filter=NULL)
+#' filter_perrrfect(imager::boats, filter_type="custom", custom_filter=matrix(0.01, 42, 21))
 filter_perrrfect <- function(image, filter_type = "blur", filter_size = 3, custom_filter = NULL) {
   if (magrittr::not(is.cimg(image))) {
     stop("Invalid image. Image in not a cimg object")

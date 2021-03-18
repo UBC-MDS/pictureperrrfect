@@ -21,6 +21,8 @@ A matrix of size kernel_size * kernel_size representing the filter.
 This function can be used to build predefined filters.
 }
 \examples{
+\dontrun{
 build_filter("blur", 3)
 build_filter("sharpen", 7)
+}
 }

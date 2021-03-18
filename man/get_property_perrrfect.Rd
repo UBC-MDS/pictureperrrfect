@@ -16,5 +16,7 @@ a list of image dimensions, pixels, and each channel's mean and median
 This function will get the image property of a image.
 }
 \examples{
+\dontrun{
 get_property_perrrfect(imager::boats)
+}
 }

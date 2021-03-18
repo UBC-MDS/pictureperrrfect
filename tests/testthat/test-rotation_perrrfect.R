@@ -1,4 +1,5 @@
-dim_test_df <- as.data.frame(imager::boats)
+boats <- load.image("../img/boats.jpg")
+dim_test_df <- as.data.frame(boats)
 single_rotation_img <- rotation_perrrfect(boats, 1)
 double_rotation_img <- rotation_perrrfect(boats, 2)
 triple_rotation_img <- rotation_perrrfect(boats, 3)

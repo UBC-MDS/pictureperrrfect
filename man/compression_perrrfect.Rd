@@ -23,6 +23,8 @@ compressed cimg object is returned. The user can also specify the pooling algori
 used and the size of the kernel to apply over the image.
 }
 \examples{
+\dontrun{
 img <- imager::as.cimg(imager::boats)
 compression_perrrfect(img, kernel_size=2, pooling_function="max")
+}
 }

@@ -12,7 +12,9 @@ library(imager)
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' get_property_perrrfect(imager::boats)
+#' }
 get_property_perrrfect <- function(image) {
     # error handling
     if (!imager::is.cimg(image)) {

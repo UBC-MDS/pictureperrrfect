@@ -23,8 +23,10 @@ library(abind)
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' img <- imager::as.cimg(imager::boats)
 #' compression_perrrfect(img, kernel_size=2, pooling_function="max")
+#' }
 compression_perrrfect <- function(img, kernel_size=2, pooling_function="max") {
     check_values(img, kernel_size)
 

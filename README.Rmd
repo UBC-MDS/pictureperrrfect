@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # pictureperrrfect
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/UBC-MDS/pictureperrrfect/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/pictureperrrfect/actions)
 <!-- badges: end -->
 
 A fun R utility package to make your pictures perfect! The package enables users to process, manipulate, and gather data about their images.

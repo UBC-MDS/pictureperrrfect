@@ -12,7 +12,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' rotation_perrrfect(imager::boats, 1)
+#' }
 rotation_perrrfect <- function(image, n_rot) {
   # Type testing
   if(!imager::is.cimg(image)){

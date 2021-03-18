@@ -13,8 +13,10 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' build_filter("blur", 3)
 #' build_filter("sharpen", 7)
+#' }
 build_filter <- function(kernel_type, kernel_size) {
 
   if (magrittr::not(is.numeric(kernel_size))) {

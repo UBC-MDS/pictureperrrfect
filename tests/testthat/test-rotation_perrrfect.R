@@ -1,4 +1,4 @@
-boats <- load.image(here::here("img", "boats.jpg"))
+boats <- load.image(here::here("../img", "boats.jpg"))
 dim_test_df <- as.data.frame(boats)
 single_rotation_img <- rotation_perrrfect(boats, 1)
 double_rotation_img <- rotation_perrrfect(boats, 2)

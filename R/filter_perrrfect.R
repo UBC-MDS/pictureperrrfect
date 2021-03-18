@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' build_filter("blur", 3)
 #' build_filter("sharpen", 7)
 #' }
@@ -64,7 +64,7 @@ build_filter <- function(kernel_type, kernel_size) {
 #' @return A cimg object representing the transformed image.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' filter_perrrfect(imager::boats, filter_type="blur", filter_size=21L, custom_filter=NULL)
 #' filter_perrrfect(imager::boats, filter_type="custom", custom_filter=matrix(0.01, 42, 21))
 #'}

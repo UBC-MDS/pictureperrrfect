@@ -12,7 +12,7 @@ library(imager)
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' get_property_perrrfect(imager::boats)
 #' }
 get_property_perrrfect <- function(image) {

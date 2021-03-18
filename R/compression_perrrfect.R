@@ -23,7 +23,7 @@ library(abind)
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' img <- imager::as.cimg(imager::boats)
 #' compression_perrrfect(img, kernel_size=2, pooling_function="max")
 #' }
@@ -87,7 +87,7 @@ compression_perrrfect <- function(img, kernel_size=2, pooling_function="max") {
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' img <- imager::as.cimg(imager::boats)
 #' pool_band(img[,,,1], kernel_size=2, pooling_func="max")
 #'}
@@ -136,7 +136,7 @@ pool_band <- function(img, kernel_size, pooling_func){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' img <- imager::as.cimg(imager::boats)
 #' check_values(img, kernel_size=2)
 #'}

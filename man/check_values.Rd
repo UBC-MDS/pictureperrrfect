@@ -19,6 +19,8 @@ This function checks that the img and kernel size are valid inputs
 and stops with an error if not.
 }
 \examples{
+\donttest{
 img <- imager::as.cimg(imager::boats)
 check_values(img, kernel_size=2)
+}
 }

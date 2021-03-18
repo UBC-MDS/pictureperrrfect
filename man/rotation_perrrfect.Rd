@@ -20,7 +20,7 @@ rotation_perrrfect rotates an image in matrix form by
 either 90, 180, 270, or 360 degrees.
 }
 \examples{
-\dontrun{
+\donttest{
 rotation_perrrfect(imager::boats, 1)
 }
 }

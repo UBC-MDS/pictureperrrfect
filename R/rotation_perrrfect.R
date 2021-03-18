@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' rotation_perrrfect(imager::boats, 1)
 #' }
 rotation_perrrfect <- function(image, n_rot) {

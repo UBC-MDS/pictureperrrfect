@@ -23,6 +23,8 @@ The function applies a lossy pooling algorithm to compress the specified
 colour band and the resulting cimg object is returned.
 }
 \examples{
+\donttest{
 img <- imager::as.cimg(imager::boats)
 pool_band(img[,,,1], kernel_size=2, pooling_func="max")
+}
 }

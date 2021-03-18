@@ -24,3 +24,5 @@ Suggests:
     testthat (>= 3.0.0),
     covr,
     here
+URL: https://github.com/UBC-MDS/pictureperrrfect
+BugReports: https://github.com/UBC-MDS/pictureperrrfect/issues

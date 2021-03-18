@@ -20,8 +20,8 @@ testthat::test_that("output type incorrect for sharpen tests", {
   testthat::expect_true(is.cimg(test_image))
 })
 
-imager::save.image(test_image, "../img/temp_image.jpg"))
-temp_image <- load.image("../img/temp_image.jpg"))
+imager::save.image(test_image, "../img/temp_image.jpg")
+temp_image <- load.image("../img/temp_image.jpg")
 
 testthat::test_that("regression test sharpen", {
   testthat::expect_equal(temp_image, output_beautiful_Vancouver_sharpen_21,
@@ -34,8 +34,8 @@ testthat::test_that("output type incorrect for blur tests", {
   testthat::expect_true(is.cimg(test_image))
 })
 
-imager::save.image(test_image, "../img/temp_image.jpg"))
-temp_image <- load.image("../img/temp_image.jpg"))
+imager::save.image(test_image, "../img/temp_image.jpg")
+temp_image <- load.image("../img/temp_image.jpg")
 
 testthat::test_that("regression test blur", {
   testthat::expect_equal(temp_image, output_beautiful_Vancouver_blur_21,
@@ -48,8 +48,8 @@ testthat::test_that("output type incorrect for custom tests", {
   testthat::expect_true(is.cimg(test_image))
 })
 
-imager::save.image(test_image, "../img/temp_image.jpg"))
-temp_image <- load.image("../img/temp_image.jpg"))
+imager::save.image(test_image, "../img/temp_image.jpg")
+temp_image <- load.image("../img/temp_image.jpg")
 
 testthat::test_that("regression test custom", {
   testthat::expect_equal(temp_image, output_beautiful_Vancouver_blur_21,

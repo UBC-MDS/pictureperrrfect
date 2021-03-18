@@ -87,8 +87,10 @@ compression_perrrfect <- function(img, kernel_size=2, pooling_function="max") {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' img <- imager::as.cimg(imager::boats)
 #' pool_band(img[,,,1], kernel_size=2, pooling_func="max")
+#'}
 pool_band <- function(img, kernel_size, pooling_func){
     col <- dim(img)[1]%/%kernel_size
     row <- dim(img)[2]%/%kernel_size
@@ -134,8 +136,10 @@ pool_band <- function(img, kernel_size, pooling_func){
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' img <- imager::as.cimg(imager::boats)
 #' check_values(img, kernel_size=2)
+#'}
 check_values <- function(img, kernel_size){
 
     # Image must be a cimg type

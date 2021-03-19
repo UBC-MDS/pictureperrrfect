@@ -73,6 +73,12 @@ jobs:
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
+      - name: Install Python and miniconda
+        run: |
+          Rscript -e "remotes::install_github('rstudio/reticulate')"
+          Rscript -e "try(reticulate::install_miniconda())"
+          Rscript -e "reticulate::conda_create('r-reticulate', 'numpy')"
+
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false

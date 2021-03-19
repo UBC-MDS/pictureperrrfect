@@ -23,7 +23,6 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
 
       - name: Install XQuartz on macOS
-        if: runner.os == 'macOS'
         run: brew install xquartz --cask
 
       - name: Query dependencies
@@ -39,7 +38,13 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-
+          
+      - name: Install Python and miniconda
+        run: |
+          Rscript -e "remotes::install_github('rstudio/reticulate')"
+          Rscript -e "try(reticulate::install_miniconda())"
+          Rscript -e "reticulate::conda_create('r-reticulate')"
+          
       - name: Install dependencies
         run: |
           install.packages(c("remotes"))

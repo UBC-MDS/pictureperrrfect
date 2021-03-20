@@ -19,7 +19,8 @@ Imports:
     tidyverse,
     dplyr,
     reticulate,
-    abind
+    abind,
+    devtools
 Suggests: 
     testthat (>= 3.0.0),
     covr,

@@ -94,7 +94,7 @@ namibia <- load.image("img/namibia.jpg")
 plot(namibia)
 ```
 
-![png](img/output_1_0.png)
+![png](img/namibia_orig.png)
 
 ``` r
 # Rotate the image 90 degrees
@@ -102,7 +102,7 @@ rotated_namibia <- rotation_perrrfect(namibia, 1)
 plot(rotated_namibia)
 ```
 
-![png](img/output_2_0.png)
+![png](img/namibia_rot.png)
 
 ``` r
 compress_namibia <- compression_perrrfect(namibia,
@@ -113,7 +113,7 @@ compress_namibia <- compression_perrrfect(namibia,
 plot(compress_namibia)
 ```
 
-![png](img/output_3_1.png)
+![png](img/namibia_comp.png)
 
 ``` r
 filtered_namibia <- filter_perrrfect(namibia,
@@ -124,7 +124,7 @@ filtered_namibia <- filter_perrrfect(namibia,
 plot(filtered_namibia)
 ```
 
-![png](img/output_4_0.png)
+![png](img/namibia_blur.png)
 
 ## Contributors
 

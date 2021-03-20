@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/UBC-MDS/pictureperrrfect/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/pictureperrrfect/actions)
+[![test-coverage](https://github.com/UBC-MDS/pictureperrrfect/workflows/test-coverage/badge.svg)](https://github.com/UBC-MDS/pictureperrrfect/actions)
+[![codecov](https://codecov.io/gh/UBC-MDS/pictureperrrfect/branch/master/graph/badge.svg?token=WR0X23ATWK)](https://codecov.io/gh/UBC-MDS/pictureperrrfect)
 <!-- badges: end -->
 
 A fun R utility package to make your pictures perfect! The package

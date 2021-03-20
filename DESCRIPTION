@@ -26,3 +26,4 @@ Suggests:
     here
 URL: https://github.com/UBC-MDS/pictureperrrfect
 BugReports: https://github.com/UBC-MDS/pictureperrrfect/issues
+VignetteBuilder: knitr

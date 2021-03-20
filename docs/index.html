@@ -87,9 +87,13 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of pictureperrrfect from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<p>You can install the released version of pictureperrrfect using the following commands from your Rstudio console:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pictureperrrfect"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="co"># install devtools if needed</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
+
+<span class="co"># install pictureperrrfect</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"UBC-MDS/pictureperrrfect"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="features" class="section level2">
 <h2 class="hasAnchor">
@@ -100,7 +104,7 @@
 <li><p>Function 1 filter_perrrfect: With this function, a user can either select a predefined filter or create their own custom filter. The image is then passed through the filter and output for the user to view.</p></li>
 <li><p>Function 2 get_property_perrrfect: The goal of this function is to take an image and return statistics related to the different colour bands within the image. These statistics include mean and median values for each channel as well as a plotted histogram of values for each channel.</p></li>
 <li><p>Function 3 compression_perrrfect: Using a pooling algorithm, this function will apply lossy compression to given image. The user will be able to specify the type of pooling (max, min, or mean) as well as the kernel size.</p></li>
-<li><p>Function 4 rotate_perrrfect: This final function applies a rotation to a given image and outputs the result. A user can specifiy the number of degrees they wish the image to be rotated.</p></li>
+<li><p>Function 4 rotation_perrrfect: This final function applies a rotation to a given image and outputs the result. A user can specifiy the number of degrees they wish the image to be rotated.</p></li>
 </ul>
 <p>Image processing is very popular in the R ecosystem so we are aware that we are not reinventing the wheel with our package, but we hope to gain a deeper understanding of the inner workings of an image package. Specifically, the “imager” library has functions that rotate, flip an image, or filter which covers 3 of our 4 functions.</p>
 </div>
@@ -110,21 +114,72 @@
 <ul>
 <li>R</li>
 <li>imager</li>
+<li>magrittr,</li>
+<li>stats,</li>
+<li>imager,</li>
+<li>tidyverse,</li>
+<li>dplyr,</li>
+<li>reticulate,</li>
+<li>abind,</li>
+<li>devtools,</li>
+<li>knitr</li>
+<li>testthat (&gt;= 3.0.0)</li>
+<li>covr</li>
+<li>here</li>
 </ul>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<ul>
-<li>TODO</li>
-</ul>
-</div>
-<div id="documentation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#documentation" class="anchor"></a>Documentation</h2>
-<ul>
-<li>TODO</li>
-</ul>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/UBC-MDS/pictureperrrfect">pictureperrrfect</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://dahtah.github.io/imager/">imager</a></span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Load the image</span>
+<span class="va">namibia</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/imager/man/load.image.html">load.image</a></span><span class="op">(</span><span class="st">"img/namibia.jpg"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">namibia</span><span class="op">)</span></code></pre></div>
+<p><img src="img/namibia_orig.png" alt="png"></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Rotate the image 90 degrees</span>
+<span class="va">rotated_namibia</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/rotation_perrrfect.html">rotation_perrrfect</a></span><span class="op">(</span><span class="va">namibia</span>, <span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">rotated_namibia</span><span class="op">)</span></code></pre></div>
+<p><img src="img/namibia_rot.png" alt="png"></p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">compress_namibia</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/compression_perrrfect.html">compression_perrrfect</a></span><span class="op">(</span><span class="va">namibia</span>,
+  kernel_size <span class="op">=</span> <span class="fl">10</span>,
+  pooling_function <span class="op">=</span> <span class="st">"max"</span>
+<span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">compress_namibia</span><span class="op">)</span></code></pre></div>
+<p><img src="img/namibia_comp.png" alt="png"></p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">filtered_namibia</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/filter_perrrfect.html">filter_perrrfect</a></span><span class="op">(</span><span class="va">namibia</span>,
+  filter_type <span class="op">=</span> <span class="st">"blur"</span>,
+  filter_size <span class="op">=</span> <span class="fl">30</span>, custom_filter <span class="op">=</span> <span class="cn">NULL</span>
+<span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">filtered_namibia</span><span class="op">)</span></code></pre></div>
+<p><img src="img/namibia_blur.png" alt="png"></p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="reference/get_property_perrrfect.html">get_property_perrrfect</a></span><span class="op">(</span><span class="va">namibia</span><span class="op">)</span><span class="op">)</span>
+
+<span class="co">#&gt;$width</span>
+<span class="co">#&gt;[1] 2448</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt;$height</span>
+<span class="co">#&gt;[1] 3264</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt;$pixels</span>
+<span class="co">#&gt;[1] 7990272</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt;$R</span>
+<span class="co">#&gt;[1] 0.5360028 0.4549020</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt;$G</span>
+<span class="co">#&gt;[1] 0.4792823 0.5490196</span>
+<span class="co">#&gt;</span>
+<span class="co">#&gt;$B</span>
+<span class="co">#&gt;[1] 0.5216981 0.4627451</span></code></pre></div>
 </div>
 <div id="contributors" class="section level2">
 <h2 class="hasAnchor">

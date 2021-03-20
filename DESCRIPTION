@@ -20,7 +20,8 @@ Imports:
     dplyr,
     reticulate,
     abind,
-    devtools
+    devtools,
+    knitr
 Suggests: 
     testthat (>= 3.0.0),
     covr,

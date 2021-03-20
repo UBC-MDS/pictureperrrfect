@@ -7,9 +7,10 @@ output_beautiful_Vancouver_sharpen_21 <- load.image("../img/output_beautiful_Van
 test_image <- filter_perrrfect(input_image, filter_type = "sharpen", filter_size = 21, custom_filter = NULL)
 
 testthat::test_that("check all errors", {
-  testthat::expect_error(test_imagefilter_perrrfect(input_image, filter_type = "abc"))
-  testthat::expect_error(test_imagefilter_perrrfect("input_image", filter_type = "abc"))
+  testthat::expect_error(filter_perrrfect(input_image, filter_type = "abc"))
+  testthat::expect_error(filter_perrrfect("input_image", filter_type = "sharpen"))
   testthat::expect_error(filter_perrrfect(input_image, filter_type = "sharpen", filter_size = 5000, custom_filter = NULL))
+  testthat::expect_error(filter_perrrfect(input_image, filter_type = "sharpen", filter_size = "5", custom_filter = NULL))
   testthat::expect_error(filter_perrrfect(input_image, filter_type = "custom", filter_size = 21, custom_filter = NULL))
   testthat::expect_error(build_filter("abc", 7))
   testthat::expect_error(build_filter("blur", "7"))

@@ -1,0 +1,99 @@
+---
+title: "picture_perrrfect"
+author: Dustin Burnham, Chad Neald, Kangbo Lu, Debananda Sarkar
+date: March 20th, 2021
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{picture_perrrfect}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Welcome to Picture Perrrfect!
+
+The pictureperrrfect package is made for anyone looking to make their pictures
+perrrfect!  Users can easily gather statistical information about images, or 
+just perform simple operations like image rotation, compression, and filtering. 
+The pictureperrrfect package was built using functions from the [imager](https://github.com/dahtah/imager) package.
+ package.
+
+```{r load_namespace, include=FALSE}
+devtools::load_all()
+```
+
+```{r setup}
+# Load packages
+library(pictureperrrfect)
+library(imager)
+```
+
+```{r load image}
+# Load in the Image
+vancouver <- load.image("../img/input_beautiful_Vancouver.jpg")
+```
+
+## Demonstration
+
+What does it mean to make your pictures perrrfect (TM)?  To display how easy
+it is to manipulate and gather information on your images, I'll demonstrate
+each function on an image of the most beautiful city in the Western Hemisphere,
+Vancouver, Canada.
+
+```{r display image}
+# Display image
+plot(vancouver)
+```
+
+### Rotation
+
+The first operation is the most simple, a quick 90 degree rotation. The function
+rotation_perrrfect will rotate an image by some integer multiple of 90 degrees.
+
+```{r rotation}
+rotated_vancouver <- rotation_perrrfect(vancouver, 1)
+plot(rotated_vancouver)
+```
+
+### Compression
+
+A common operation in Convolutional Neural Networks is image compression!
+
+```{r compress}
+comp_vancouver <- compression_perrrfect(vancouver,
+  kernel_size = 2,
+  pooling_function = "max"
+)
+plot(comp_vancouver)
+```
+
+### Filtering
+
+Next we have a simple filtering operation.  With this filter, we can blur
+or sharpen images using differing filter sizes for different effects.  
+It's grrreat!
+
+```{r filter}
+build_filter("blur", 3)
+filtered_vancouver <- filter_perrrfect(vancouver,
+  filter_type = "blur",
+  filter_size = 21L, custom_filter = NULL
+)
+
+plot(filtered_vancouver)
+```
+
+### Image Propterties
+
+Finally, lets get data on properties of our image, like width, height,
+pixel count, and RGB data.
+
+```{r property}
+get_property_perrrfect(vancouver)
+```

@@ -128,6 +128,28 @@ plot(filtered_namibia)
 
 ![png](img/namibia_blur.png)
 
+``` r
+print(get_property_perrrfect(namibia))
+
+#>$width
+#>[1] 2448
+#>
+#>$height
+#>[1] 3264
+#>
+#>$pixels
+#>[1] 7990272
+#>
+#>$R
+#>[1] 0.5360028 0.4549020
+#>
+#>$G
+#>[1] 0.4792823 0.5490196
+#>
+#>$B
+#>[1] 0.5216981 0.4627451
+```
+
 ## Contributors
 
 We welcome and recognize all contributions. You can find our

@@ -4,9 +4,8 @@
 # pictureperrrfect
 
 <!-- badges: start -->
+
 [![R-CMD-check](https://github.com/UBC-MDS/pictureperrrfect/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/pictureperrrfect/actions)
-[![test-coverage](https://github.com/UBC-MDS/pictureperrrfect/workflows/test-coverage/badge.svg)](https://github.com/UBC-MDS/pictureperrrfect/actions)
-[![codecov](https://codecov.io/gh/UBC-MDS/pictureperrrfect/branch/master/graph/badge.svg?token=WR0X23ATWK)](https://codecov.io/gh/UBC-MDS/pictureperrrfect)
 <!-- badges: end -->
 
 A fun R utility package to make your pictures perfect! The package
@@ -15,13 +14,14 @@ images.
 
 ## Installation
 
-You can install the released version of pictureperrrfect using the following commands from your Rstudio console:
+You can install the released version of pictureperrrfect using the
+following commands from your Rstudio console:
 
 ``` r
 # install devtools if needed
 install.packages("devtools")
 
-# install pictureperrrfect from this github repo
+# install pictureperrrfect
 devtools::install_github("UBC-MDS/pictureperrrfect")
 ```
 
@@ -54,9 +54,9 @@ greyscale images. Additional functions may be added if time permits.
     be able to specify the type of pooling (max, min, or mean) as well
     as the kernel size.
 
--   Function 4 rotate\_perrrfect: This final function applies a rotation
-    to a given image and outputs the result. A user can specifiy the
-    number of degrees they wish the image to be rotated.
+-   Function 4 rotation\_perrrfect: This final function applies a
+    rotation to a given image and outputs the result. A user can
+    specifiy the number of degrees they wish the image to be rotated.
 
 Image processing is very popular in the R ecosystem so we are aware that
 we are not reinventing the wheel with our package, but we hope to gain a
@@ -68,14 +68,63 @@ image, or filter which covers 3 of our 4 functions.
 
 -   R
 -   imager
+-   magrittr,
+-   stats,
+-   imager,
+-   tidyverse,
+-   dplyr,
+-   reticulate,
+-   abind,
+-   devtools,
+-   knitr
+-   testthat (&gt;= 3.0.0)
+-   covr
+-   here
 
 ## Usage
 
--   TODO
+``` r
+library(pictureperrrfect)
+library(imager)
+```
 
-## Documentation
+``` r
+# Load the image
+namibia <- load.image("img/namibia.jpg")
+plot(namibia)
+```
 
--   TODO
+![png](img/output_1_0.png)
+
+``` r
+# Rotate the image 90 degrees
+rotated_namibia <- rotation_perrrfect(namibia, 1)
+plot(rotated_namibia)
+```
+
+![png](img/output_2_0.png)
+
+``` r
+compress_namibia <- compression_perrrfect(namibia,
+  kernel_size = 10,
+  pooling_function = "max"
+)
+
+plot(compress_namibia)
+```
+
+![png](img/output_3_1.png)
+
+``` r
+filtered_namibia <- filter_perrrfect(namibia,
+  filter_type = "blur",
+  filter_size = 30, custom_filter = NULL
+)
+
+plot(filtered_namibia)
+```
+
+![png](img/output_4_0.png)
 
 ## Contributors
 

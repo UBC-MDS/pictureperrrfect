@@ -24,10 +24,14 @@ A fun R utility package to make your pictures perfect! The package enables users
 
 ## Installation
 
-You can install the released version of pictureperrrfect from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of pictureperrrfect using the following commands from your Rstudio console:
 
 ``` r
-install.packages("pictureperrrfect")
+# install devtools if needed
+install.packages("devtools")
+
+# install pictureperrrfect
+devtools::install_github("UBC-MDS/pictureperrrfect")
 ```
 
 ## Features
@@ -42,7 +46,7 @@ There are four main functions planned for development and they are outlined belo
 
 - Function 3 compression_perrrfect: Using a pooling algorithm, this function will apply lossy compression to given image. The user will be able to specify the type of pooling (max, min, or mean) as well as the kernel size.
 
-- Function 4 rotate_perrrfect: This final function applies a rotation to a given image and outputs the result. A user can specifiy the number of degrees they wish the image to be rotated.
+- Function 4 rotation_perrrfect: This final function applies a rotation to a given image and outputs the result. A user can specifiy the number of degrees they wish the image to be rotated.
 
 Image processing is very popular in the R ecosystem so we are aware that we are not reinventing the wheel with our package, but we hope to gain a deeper understanding of the inner workings of an image package. Specifically, the "imager" library has functions that rotate, flip an image, or filter which covers 3 of our 4 functions.
 
@@ -50,14 +54,63 @@ Image processing is very popular in the R ecosystem so we are aware that we are 
 
 - R
 - imager
+- magrittr,
+- stats,
+- imager,
+- tidyverse,
+- dplyr,
+- reticulate,
+- abind,
+- devtools,
+- knitr
+- testthat (>= 3.0.0)
+- covr
+- here
 
 ## Usage
 
-- TODO
+```R
+library(pictureperrrfect)
+library(imager)
+```
 
-## Documentation
+```R
+# Load the image
+namibia <- load.image("img/namibia.jpg")
+plot(namibia)
+```
+   
+![png](img/namibia_orig.png)
 
-- TODO
+```R
+# Rotate the image 90 degrees
+rotated_namibia <- rotation_perrrfect(namibia, 1)
+plot(rotated_namibia)
+```
+ 
+![png](img/namibia_rot.png)
+
+```R
+compress_namibia <- compression_perrrfect(namibia,
+  kernel_size = 10,
+  pooling_function = "max"
+)
+
+plot(compress_namibia)
+```
+    
+![png](img/namibia_comp.png)
+
+```R
+filtered_namibia <- filter_perrrfect(namibia,
+  filter_type = "blur",
+  filter_size = 30, custom_filter = NULL
+)
+
+plot(filtered_namibia)
+```
+    
+![png](img/namibia_blur.png)
 
 ## Contributors
 

@@ -15,11 +15,14 @@ images.
 
 ## Installation
 
-You can install the released version of pictureperrrfect from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of pictureperrrfect using the following commands from your Rstudio console:
 
 ``` r
-install.packages("pictureperrrfect")
+# install devtools if needed
+install.packages("devtools")
+
+# install pictureperrrfect from this github repo
+devtools::install_github("UBC-MDS/pictureperrrfect")
 ```
 
 ## Features

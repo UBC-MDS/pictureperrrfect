@@ -48,8 +48,7 @@ greyscale images. Additional functions may be added if time permits.
 -   Function 2 get\_property\_perrrfect: The goal of this function is to
     take an image and return statistics related to the different colour
     bands within the image. These statistics include mean and median
-    values for each channel as well as a plotted histogram of values for
-    each channel.
+    values for each channel.
 
 -   Function 3 compression\_perrrfect: Using a pooling algorithm, this
     function will apply lossy compression to given image. The user will
